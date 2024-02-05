@@ -94,8 +94,7 @@ const Index: React.FC = () => {
       </div>
 
       <div className={"form"}>
-        <div>
-          <h2>Items</h2>
+        <div className={"sub-box"}>
           <ul>
             {todos.map((item, index) => (
               <li key={index} onClick={() => handleClickAddItem(item)}>
@@ -106,7 +105,7 @@ const Index: React.FC = () => {
         </div>
 
         {/* {Object.entries(items).map(([type, items]) => (
-          <div key={type}>
+          <div key={type} className={"sub-box"}>
             <h2>{type}</h2>
             <ul>
               {items.map((item, index) => (
@@ -121,7 +120,7 @@ const Index: React.FC = () => {
           </div>
         ))} */}
 
-        <div>
+        <div className={"sub-box"}>
           <h2>Fruit</h2>
           <ul>
             {fruits.map((item, index) => (
@@ -135,7 +134,7 @@ const Index: React.FC = () => {
           </ul>
         </div>
 
-        <div>
+        <div className={"sub-box"}>
           <h2>Vegetables</h2>
           <ul>
             {vegetables.map((item, index) => (

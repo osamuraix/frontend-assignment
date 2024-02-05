@@ -74,7 +74,8 @@ p.red {
 }
 
 .form {
-  display: flex;
+  /* display: flex; */
+  display: -webkit-inline-box;
   flex-direction: column;
 }
 
@@ -185,26 +186,26 @@ p.red {
   padding: 0px 5px;
 }
 
-.buttonsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.sub-box {
+  border: 1px solid #ddd;
+  margin: 10px;
+  min-width: 120px;
 }
 
-.columnsContainer {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
+.sub-box h2 {
+  background-color: #ddd;
+  text-align: center;
+  padding: 5px;
+  margin: 0;
 }
 
-.column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.sub-box ul {
+  list-style: none;
+  padding: 0;
 }
 
-.columnButton {
-  margin: 5px;
-  padding: 8px;
-  border: 1px solid #ccc;
+.sub-box li {
+  margin: 10px;
+  border: 1px solid #d9d9d9;
+  text-align: center;
 }
