@@ -1,0 +1,33 @@
+{
+  "Welcome Back": "Welcome Back!",
+  "Sign in description": "Sign in to your account to continue",
+  "Sign in": "Sign In",
+  "Sign up": "Sign Up",
+  "Sign out": "Sign Out",
+
+  "Email": "Email",
+  "Email input": "Email Address",
+  "Password": "Password",
+  "Password input": "Password",
+  "Confirm Password": "Confirm Password",
+  "Confirm Password input": "Confirm Password",
+  "Forgot password": "Forgot password?",
+  "Don't have an account": "Don't have an account?",
+  "Already has an account": "Already has an account?",
+  "Invalid username": "Invalid username",
+  "Invalid password": "Invalid password",
+  "Email is required": "Email is required",
+  "Password is required": "Password is required",
+  "Password is invalid": "Password is required",
+
+  "Landing Page": "Landing Page",
+  "Landing Page description": "Let's find something to do!",
+  "Activity": "Activity:",
+  "Type": "Type:",
+  "Participant": "Participant:",
+  "Budget": "Budget:",
+  "Get New Activity": "Get New Activity",
+
+  "Auto Delete Todo List": "1. Auto Delete Todo List",
+  "Create data from API": "2. Create data from API"
+}
