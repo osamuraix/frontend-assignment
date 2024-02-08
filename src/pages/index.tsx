@@ -21,9 +21,12 @@ const Index: React.FC = () => {
   const [todos, setTodos] = useState([]);
   const [users, setUsers] = useState({});
 
+  const [countDownTimer, setCountDownTimer] = useState(null);
+  const [timers, setTimers] = useState(5000);
   const [fruits, setFruits] = useState([]);
   const [vegetables, setVegetables] = useState([]);
   // const [items, setItems] = useState<IItems>({});
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,6 +58,8 @@ const Index: React.FC = () => {
       setVegetables((prevVegetables) => [...prevVegetables, item]);
     }
 
+    setItems((prevItems) => [...prevItems, item]);
+
     // const { type, ...etc } = item;
     // setItems((prevItem) => ({
     //   ...prevItem,
@@ -81,11 +86,48 @@ const Index: React.FC = () => {
     setTodos([...todos, { type, ...item }]);
   };
 
+  const handleHoverRemoveItem = () => {
+    const allList = items;
+    if (allList.length <= 0) return;
+
+    const timer = setTimeout(() => {
+      const item = allList[0];
+      if (item.type === "Fruit") {
+        setFruits((prevFruits) => prevFruits.filter((t) => t !== item));
+      } else if (item.type === "Vegetable") {
+        setVegetables((prevVegetables) =>
+          prevVegetables.filter((t) => t !== item)
+        );
+      }
+
+      setItems((prevItems) => prevItems.filter((t) => t !== item));
+
+      setTodos([...todos, { type: item.type, ...item }]);
+
+      setTimers(500);
+    }, timers);
+
+    setCountDownTimer(timer);
+  };
+
   useEffect(() => {
     if (UserData) {
       setUsers(UserData);
     }
   }, [UserData]);
+
+  useEffect(() => {
+    if (countDownTimer) {
+      return () => clearTimeout(countDownTimer);
+    }
+  }, [countDownTimer]);
+
+  useEffect(() => {
+    const allList = items;
+    if (allList.length > 0) {
+      handleHoverRemoveItem();
+    }
+  }, [items]);
 
   return (
     <>
